@@ -26,7 +26,7 @@ This is a simple, static website designed and developed by me. It showcases my s
 
 ## Contact
 
-Your Name - Muhammad Suleman
-My Email -  Suleman999ah@gmail.com
-My LinkedIn - www.linkedin.com/in/muhammad-suleman-a049902b5
-Project Link: [(https://starlearning.netlify.app/))
+Your Name - Muhammad Suleman <br>
+My Email -  Suleman999ah@gmail.com <br>
+My LinkedIn - www.linkedin.com/in/muhammad-suleman-a049902b5 <br>
+Project Link: [(https://starlearning.netlify.app/)) <br>
