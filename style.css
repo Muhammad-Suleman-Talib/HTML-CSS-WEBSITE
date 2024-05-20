@@ -1,0 +1,937 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Urbanist:ital,wght@0,400;0,500;900;1,500&display=swap');  
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Jost&family=Poppins:ital@0;1&family=Urbanist:ital,wght@0,400;0,500;900;1,500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+/* html is used  to given 16px is default of any broewser its good */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: "Shrikhand", serif;
+}
+
+p,
+li,
+a ,
+label{
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+    color: var(--para-color); 
+}
+
+:root{
+    --main-color:#0062ff;
+    --supporting-color:#ebf3fe;
+    --font-color:#424242;
+    --bg-color:#f7fcff;
+    --h-color:#003b99;
+    --heading-color:#000a19;
+    --para-color:#504e4d;
+    /* --test-color:#070101; */
+    --btn-hover-color: #003b99;
+    --btn-box-shadow:rgba(100,100,111,0.2)0px 7px 29px 0px;
+}
+.container{
+    max-width: 142rem;
+    /* its used for container make good for responsive or ya jo ha container ko ek sequence ka sath likhna ma madad krta ha is good to start */
+    margin: 0 auto;
+    /* margin 0 jo ha wi is liya ka ap jo ho wo uper sa 0 ho jaio or bottom sa 0 ho jao or left wright sa  auto maens equal ho jao  */
+    padding: 9.6rem 2.4rem;
+    /* pading is used ya ek pora container ko di ha ab jo kuch likha ga wo is rule ka mutabik likha jai ga  ok
+       padding 9.6 means  top or bottom sa 96px ho jai or 2.4 ho jai left or right  24px  */
+}
+
+/*  sectuion navbar */
+
+.section-navbar{
+    /* ab ya bat nav bar ki ho rahi ha is ko try krna  */
+    width: 100%;
+    box-shadow: rgba(0,0, 0,0.05 )0px 6px 24px 0px ,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px ;
+}
+
+.section-navbar .container{
+    display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 1.8rem 0;
+}
+
+.section-navbar .navbar ul{
+    display: flex;
+    gap: 2.5rem;
+    /* text-transform: capitalize; */
+     /* font-size: 2rem; */
+   
+    /* margin-right: 10px; */
+    & li a{
+        color: var(--heading-color);
+        text-transform: uppercase;
+        font-weight: 600;
+        display: inline-block;
+        font-size: 1.6rem;
+        position: relative;
+
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -.2rem;
+        width: 0%;
+        border-bottom: .3rem solid var(--main-color);
+        transition: all .3s linear;
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -ms-transition: all .3s linear;
+        -o-transition: all .3s linear;
+}    
+    }
+    & li a:hover:after{
+        width: 100%;
+    }
+}
+a{
+
+   text-decoration: none;
+}
+li{
+    list-style-type: none; 
+}
+/*  sectuion navbar */
+
+
+/*  staryt hero sectionnn */
+/* lyaout */
+.grid{
+    /* ya ek tarika ha is sa ap colum banata ha  */
+    display: grid;
+}
+.grid-two--coloum{
+    grid-template-columns: repeat(2,1fr);
+
+    /* grid coloums sa ap ko jo colums chahiya ha wo likha jasa 2 chahiya kitna kitna chahiya 1fr matlab equal  */
+}
+/* lyaout */
+/* reusalble */
+.btn{
+    /* ab btn ki property ha is ka zarya idea pic krna ha ho is ka zarya ap na khud kam krna ha ok  */
+    display: inline-block;
+    padding: 1.2rem 3.2rem;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border-radius: .6rem;
+    -webkit-border-radius: .6rem;
+    -moz-border-radius: .6rem;
+    -ms-border-radius: .6rem;
+    -o-border-radius: .6rem;
+}
+/* reusalble */
+
+/* state */
+.btn:hover{
+    background-color: var(--btn-hover-color);
+    cursor: pointer;
+    box-shadow: var(--btn-box-shadow);
+}
+/* state */
+
+/* colors in content */
+main{
+    /* ab ya jo ha main ha is ko samaj kr khud bana ha jasa ligradient  is ko bari acxhi tarika sa bana ha ok */
+    position: relative;
+    /* height: 100vh; */
+    background-image: linear-gradient(to top right,
+    #3d86fa,
+    #4484fb,
+    #679eff,
+    #b3d2ff,
+    #ebf3fe);
+}
+
+
+.section-hero .grid{
+    /* ya bohat keemtai ha is ma ham jo grid ka colum banai ga us ko center ma krna ha or us ka bad gap dana ha jo khattan na ho jitna bhi chota hota jai ya important ha responsive ka liya okk */
+    align-items: center;
+    gap: 6.4rem;
+    /*  gap is used for always gap in two colouma 
+    
+    now we do nesting
+    */
+
+    & .hero-sub--heading{
+        /* is ma hum paragraph ko set krna ka tarika sekh rabha ha  */
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        /* font-size: 1.7rem; */
+        word-spacing: 0.2rem;
+        color: var(--h-color);
+        font-weight: 700;
+    }
+
+    & .hero-heading{
+        font-size: 5.6rem;
+        /* line-height: 1; also use which your need of specification */
+        color: var(--h-color);
+        font-family: 'Jost', sans-serif;
+        font-weight: 900;
+    }
+    & .hero-para{
+        color: var(--bg-color);
+        margin: 2rem 0 4rem 0;
+        line-height: 1.5;
+    }
+ 
+
+}
+
+/* shpeee */
+
+
+    .custom-shape-divider-bottom-1706852915 {
+        /* ya hamara liuya shape banana ka kam krta ha ok ap ko shape bana ni ha to ap shape devider ka satrh bana sakrta ha ya ek website ha  */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+    
+    .custom-shape-divider-bottom-1706852915 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.4px);
+        height: 9rem;
+    }
+    
+    .custom-shape-divider-bottom-1706852915 .shape-fill {
+        fill: #FFFFFF;
+    }
+
+/* shpeee */
+
+
+/* colors in content */
+/*  end hero sectionnn */
+
+/* section about start */
+/* reusabvle font size 3.2 rem  text transform jo ha wo capitalize hona chahiya*/
+.section-common--heading{
+font-size: 3.2rem;
+font-weight: 700;
+text-transform: capitalize;
+
+}
+.section-common--subheading{
+    color:var(--heading-color);
+}
+/* reusabvle */
+/* about img  setting start */
+.section-about img{
+    padding: 2.4rem;
+    background-color: var(--supporting-color);
+    width: 15rem;
+    height: auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all .3s linear;
+    /* its show hover effect given tranbsition */
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+.section-about .about-div{
+    text-align: center;
+}
+/* .section-about .about-div:nth-of-type(2){
+   /* padding: 1rem; */
+/* } */
+.section-common--title{
+    font-size: 2rem;
+    margin: 2rem 0  1.2rem 0;
+}
+
+/* ab ya jo ha is ko colums ka andar ana ka liya  */
+.grid-three--columns{
+    grid-template-columns: repeat(3,1fr);
+    gap: 6.4rem;
+}
+.icon:hover img{
+    transform:rotate(360deg) ;
+   background: linear-gradient(to right,#0575ed  ,#021b79);
+    -webkit-transform:rotate(360deg) ;
+    -moz-transform:rotate(360deg) ;
+    -ms-transform:rotate(360deg) ;
+    -o-transform:rotate(360deg) ;
+}
+/* about img  setting end */
+/* section about end */
+
+
+/* courses section strat */
+.section-Course{
+
+}
+.fa-brands{
+    padding: 2.4rem;
+    background-color:var(--supporting-color);
+    font-size: 3.2rem;
+    border-radius: 50%;
+    color:var(--h-color);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.grid-four--columns{
+    grid-template-columns: repeat(4,1fr);
+    gap: 3.2rem;
+}
+
+.section-Course .Course-div{
+    padding: 3.2rem;
+}
+.section-Course .Course-div:hover{
+    box-shadow: var(--btn-box-shadow);
+}
+.Course-div:nth-child(1) .icon .fa-brands{
+background-color: var(--supporting-color);
+color: #edf030;
+}
+.Course-div:nth-child(2) .icon .fa-brands{
+background-color: var(--supporting-color);
+color: #6882bf;
+}
+.Course-div:nth-child(3) .icon .fa-brands{
+background-color: var(--supporting-color);
+color: #f0bc00;
+}
+.Course-div:nth-child(4) .icon .fa-brands{
+background-color: var(--supporting-color);
+color: #405ccd;
+}
+.Course-div:nth-child(5) .icon .fa-brands{
+background-color: var(--supporting-color);
+color: #34b780;
+}
+.Course-div:nth-child(6) .icon .fa-brands{
+background-color: var(--supporting-color);
+color: #d14cb8;
+}
+.Course-div:nth-child(7) .icon .fa-brands{
+background-color: var(--supporting-color);
+color: #6ace2d;
+}
+
+/* courses section end */
+
+
+#coursestudy {
+    height: 80px;
+    width: 80px;
+    /* border-radius: 50%; */
+   align-items: center;
+    object-fit: cover; /* Ensure the image covers the given area without distortion */
+    border-radius: 10px; /* Adjust the border-radius as needed */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effect */
+}
+
+#coursestudy:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow effect on hover */
+    transform: rotate(0deg);}
+
+/* why choosen */
+
+.section-why--choose .text-align--right .why-choose--div{
+    display: flex;
+    /* justify-content: left; */
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+    text-align:right;
+}
+
+.common-text-highlight{
+    width: 6rem;
+    aspect-ratio: 1;
+    background-color: var(--supporting-color);
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    /*text-align: center;
+    */align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+}
+
+.choose-center--div  figure{
+    /* margin-top: -0.8rem; */
+    /* margin-top: 1rem; */
+   /* height: 0vh; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* padding: 4rem; */
+   position: relative;
+
+}
+.choose-center--div #iphon{
+    height:100%;
+}
+.why-choose--div{
+    margin-top: 3.2rem;
+}
+.choose-center--div figure::before ,.choose-center--div figure::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
+    background-color: var(--main-color);
+    width: 40rem;
+    /*aspect-ratio: 1;
+    */height: 40rem;
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+    z-index: -1;
+    animation: circle 5s linear infinite;
+    -webkit-animation: circle 5s linear infinite;
+}
+@keyframes circle {
+    0%{
+        background-color: #b3deff;
+    }
+    25%{
+        background-color: #80b1ff;
+    }
+    50%{
+        background-color: #4d91ff;
+    }
+    75%{
+         background-color: #99c0ff;
+    }
+    100%{
+         background-color: #3881ff;
+    }
+}
+.choose-center--div figure::after{
+    /* background-color: green; */
+    width: 45rem;
+    height: 45rem;
+    background-color: red transparent;
+    z-index: -2;
+    border: 2rem solid var(--supporting-color);
+}
+
+/* why choosen end */ 
+
+/* contact section */
+
+.section-contact--homepage{
+    width: 60%;
+    min-height: 30rem;
+    margin: 0 auto;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px  1px 2px 0px ;
+    margin-bottom: 5rem;
+    padding: 0 3.2rem;
+    background-color: var(--bg-color);
+    position: relative;
+    bottom: -15rem;
+    z-index: 1;
+    /* margin-bottom: -15rem;
+    z-index: 1; */
+    /* background-color: red; */
+    & .grid{
+        align-items: center;
+        gap: 6.4rem;
+    }
+}
+.contact-title{
+    font-size: 3.8rem;
+    line-height: 1.2;
+}
+.contact-content p{
+    margin: 1.2rem 0 2.4rem 0;
+}
+.section-contact--homepage img{
+    width: 80%;
+    height: auto;
+}
+.section-contact--homepage a{
+    color: var(--supporting-color);
+    font-weight: 700;
+  
+    /* font-size: 3rem; */
+}
+footer .subheading{
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.footer-1--div p{
+margin: 1rem 0 3.2rem 0;
+}
+/* contact actual page */
+
+.mb-3{
+    margin-bottom: 3.2rem;
+}
+::placeholder{
+    font-size: 1.6rem;
+    letter-spacing: .1rem;
+}
+label{
+    display: block;
+    text-transform: capitalize;
+}
+input , textarea{
+    width: 100%;
+    padding: 1.4rem 2.4rem;
+    font-size: 1.7rem;
+    letter-spacing: .1rem;
+}
+.contact-content .grid{
+    gap: 6.4rem;
+}
+.btn-submit{
+    font-size: 1.8rem;
+    border: none;
+    text-transform: capitalize;
+}
+/* contact map */
+/* .contact-map iframe{
+    padding: 2rem 0px 0rem 6.2rem;
+} */
+/* contact map end */
+.section-contact{
+    & .grid{
+        text-align: center;
+        gap: 6.4rem;
+    }
+}
+/* contact actual page end */
+/* contact section end */
+/* <!-- ya jo trick ha wo ap ma dekha ka kase bohat sara fasla agaya tha upar sa is liya ab ham is ko set kare ga -->
+
+<!-- ya jo trick ha wo ap ma dekha ka kase bohat sara fasla agaya tha upar sa is liya ab ham is ko set kare ga -->
+ */
+/* .section-why--choose .container:first-child{
+padding: 6.4rem 0 2.4rem 0;
+}
+
+.section-Course .container:first-child{
+    padding: 6.4rem 0 2rem 0;
+} */
+
+/* .section-about .container:first-child,
+.section-Course .container:first-child,
+.section-why--choose .container:first-child,
+.section-contact--homepage .container:first-child,
+.section-contact .container:first-child{
+
+} */
+
+
+:is(
+    .section-about,
+    .section-Course,
+    .section-why--choose,
+    .section-contact--homepage,
+    .section-contact,
+)
+.container:first-child{
+    padding: 6.4rem 2.4rem 2.4rem 2.4rem;
+    /* its good in media queries i also given  */
+}
+.section-Course{
+    background-color: var(--bg-color);
+}
+/* ya jo trick ha ya wo fasla khatam klrti ha ba falto ka ok   */
+/* image first ko set kiya ha  */
+#img1{
+    width: 100%;
+}
+/* image first ko set kiya ha end */
+/* footer menu */
+
+footer{
+    background-color: #040d12;
+    padding-top: 15rem;
+}
+footer * {
+    color: white;
+}
+.footer-1--div {
+    text-align: left;
+}
+.social-footer--icon .fa-brands{
+    /* background-color: su; */
+    transition: all .3s linear ;
+    -webkit-transition: all .3s linear ;
+    -moz-transition: all .3s linear ;
+    -ms-transition: all .3s linear ;
+    -o-transition: all .3s linear ;
+}
+.social-footer--icon i:hover {
+  
+   background: linear-gradient(to right,#0575ed  ,#021b79)
+   ;
+   color: red;
+   /* transform:rotate(360deg) ; */
+    /* -webkit-transform:rotate(360deg) ;
+    -moz-transform:rotate(360deg) ;
+    -ms-transform:rotate(360deg) ;
+    -o-transform:rotate(360deg) ; */
+}
+/* its used for footer ko aright krna ka liya  */
+footer .grid{
+    text-align: right;
+}
+
+
+/* footer menu end */
+
+/* blog section */
+.section-blog{
+    & .grid{
+        gap: 6.4rem;
+    }
+    & .blog{
+        box-shadow: var(--btn-box-shadow);
+        transition: all .3s linear ;
+       
+        -webkit-transition: all .3s linear ;
+        -moz-transition: all .3s linear ;
+        -ms-transition: all .3s linear ;
+        -o-transition: all .3s linear ;
+       
+        &:hover{
+            scale: 1.1;
+        }
+       
+    }
+    & .blog-content{
+        padding: 1.4rem 2.4rem 2.4rem;
+    }
+    background-color: var(--bg-color);
+    &  img{
+        width: 100%;
+        height: auto;
+    }
+    & .blog-date{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.6rem;
+        font-size: 1.4rem;
+
+
+      
+    }
+    &  .blog-date #icon {
+        color: var(--main-color);
+            padding: 0px;
+        }
+     & .section-common--title{
+        margin-top: 0.8rem;
+     }
+}
+
+/* blog section end */
+
+/* SCroll bar  */
+
+/* ::-webkit-scrollbar {
+    width: 1rem;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--supporting-color);
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 58px;
+    -webkit-border-radius: 58px;
+    -moz-border-radius: 58px;
+    -ms-border-radius: 58px;
+    -o-border-radius: 58px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--heading-color);
+} 
+html {
+    scrollbar-color:red;
+}
+
+/* color of the track */
+/* html {
+    scrollbar-width: blue;
+} */ 
+input:focus-visible ,textarea:focus-visible{
+    outline: .1rem  solid var(--main-color)
+}
+/* SCroll bar end */
+
+/* responsiveness section start */
+
+/* media queries */
+
+@media (max-width: 1400px) {
+    html{
+        font-size: 56.25%;
+        /* its used fonts i given font size first in universal selector and now i given my all html in 1380px  */
+    }
+    .section-hero--imgage img{
+        width: 90%;
+    }
+    .custom-shape-divider-bottom-1706852915 svg {
+        
+        height: 7rem;
+    }
+    #iphon {
+        height: 37vh;
+    }
+}
+
+@media (max-width: 1200px) {
+    html{
+        font-size: 52%;
+        /* its used fonts i given font size first in universal selector and now i given my all html in 1380px  */
+    }
+    #iphon {
+        height: 35vh;
+    }
+
+    :is(
+    .section-about,
+    .section-Course,
+    .section-why--choose,
+    .section-contact--homepage,
+    .section-contact,
+)
+.grid{
+    gap: 6.4rem;
+}
+}
+
+@media (max-width: 998px){
+    .section-hero{
+        height: auto;
+        padding-bottom: 5rem;
+        & .grid-two--coloum{
+            grid-template-columns: 1fr;
+         
+            & .section-hero--content{
+                order: 2;
+            }
+
+            & .section-hero--imgage{
+                order: 1;
+                & #img1{
+                    width: 80%;
+                    padding-left: 18rem;
+                    /* align-items: center; */
+                    border-radius: 1rem;
+                  
+                    -webkit-border-radius: 1rem;
+                    -moz-border-radius: 1rem;
+                    -ms-border-radius: 1rem;
+                    -o-border-radius: 1rem;
+}
+            }
+        }
+    }
+    footer .grid-four--columns{
+        grid-template-columns: repeat(3,minmax(100px,1fr));
+        text-align: left;
+    }
+    .footer-1--div{
+        grid-row: 2 / 3;
+        grid-column: 1/ -1;
+        margin-top: 6.4rem;
+    }
+}
+
+@media (max-width: 800px){
+    .section-hero {
+        & .grid-two--coloum {
+          & .section-hero--imgage {
+            & #img1 {
+              width: 96%;
+              padding-left: 2rem;
+             
+              
+            }
+          }
+        }
+      }
+}
+
+@media (max-width: 768px){
+   
+    .grid-two--coloum , .grid-three--columns{
+        grid-template-columns: 1fr;
+    }
+   
+    .section-hero {
+        & .grid-two--coloum {
+          & .section-hero--imgage {
+            & #img1 {
+              width: 96%;
+              padding-left: 2rem;
+             
+              
+            }
+          }
+        }
+      }
+
+      .section-contact--homepage .btn{
+        display: block;
+        text-align: center;
+      }
+      .contact-title{
+        font-size: 2.4rem;
+      }
+      ::is(.section-contact--homepage).container:first-child{
+        padding: 6.4rem 8rem 2.4rem 8rem;
+      }
+    .section-navbar .container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    footer .grid-four--columns{
+        grid-template-columns: repeat(3,1fr);
+        text-align: left;
+    }
+        
+    .section-why--choose{
+        & #iphon{
+            /* width: 0%; */
+            height: 27vh;
+        }
+    }
+
+    .section-why--choose .text-align--right .why-choose--div{
+        align-items: start;
+        text-align: left;
+    }
+
+
+    }
+
+
+    @media ( width <= 1120px) {
+        :is(.section-Course , .section-blog) .grid-four--columns{
+            grid-template-columns: repeat(auto-fit , minmax(250px,1fr));
+        }
+        /* .section-why--choose .grid{
+            gap: 3rem;
+        } */
+        .section-why--choose{
+           
+            .choose-left--div{
+                order: 2;
+            }
+            .choose-right--div{
+                order: 3;
+            }
+            & .choose-center--div{
+                order: 1;
+                & figure::before{
+                    height: 0;
+                    width: 0;
+                    background-color: transparent;
+                    padding: 0;
+
+                }
+                & figure::after{
+                    height: 0;
+                    width: 0;
+                    background-color: transparent;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    @media (width <= 450px) {
+        .section-hero .section-hero--content .hero-heading{
+            font-size: 4.4rem;
+        }
+        .section-hero {
+            & .grid-two--coloum {
+              & .section-hero--imgage {
+                & #img1 {
+                  width: 96%;
+                  padding-left: 2rem;
+                 
+                  
+                }
+              }
+            }
+          }
+        }
+    @media (width <= 600px) {
+        
+       
+        .section-why--choose{
+            & #iphon{
+                /* width: 0%; */
+                height: 22vh;
+            }
+        }
+        .section-hero {
+            & .grid-two--coloum {
+              & .section-hero--imgage {
+                & #img1 {
+                  width: 90%;
+                  padding-left: 2rem;
+                  height: 55vh;
+                 
+                  
+                }
+              }
+            }
+          }
+        }
+    
+/* media queries end */
+
+/* responsiveness section end */
